@@ -16,6 +16,7 @@ export default function Home() {
             style={{ animationDelay: `${index * 20}ms` }}
           >
             <Image
+              unoptimized
               src={src}
               alt={`Random image ${index + 1}`}
               fill
