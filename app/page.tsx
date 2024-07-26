@@ -1,36 +1,30 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { getRandomImage } from './utils/imageUtils';
+import { getRandomImages } from './utils/imageUtils';
+
+export const revalidate = 0;
 
 export default function Home() {
-  const topImage = getRandomImage('topimages');
-  const bottomImage = getRandomImage('bottomimages');
+  const images = getRandomImages('images/eyes', 100); 
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="relative w-full max-w-lg">
-        <Image
-          src={topImage}
-          alt="Top half of anonymous East Asian male's face."
-          width={200}
-          height={400}
-          className="w-full h-auto"
-        />
+    <main className="flex min-h-screen items-center justify-center p-8">
+      <div className="grid grid-cols-10 gap-1">
+        {images.map((src, index) => (
+          <div 
+            key={index} 
+            className="w-16 h-16 relative overflow-hidden opacity-0 animate-fade-in"
+            style={{ animationDelay: `${index * 20}ms` }}
+          >
+            <Image
+              src={src}
+              alt={`Random image ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+              className="p-0"
+            />
+          </div>
+        ))}
       </div>
-      <div className="relative w-full max-w-lg mt-0">
-        <Image
-          src={bottomImage}
-          alt="Bottom half of anonymous East Asian male's face."
-          width={200}
-          height={400}
-          className="w-full h-auto"
-        />
-      </div>
-      <Link 
-        href="/"
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full hover:bg-opacity-75 transition-all duration-300">
-        Load new face
-      </Link>
     </main>
   );
 }
