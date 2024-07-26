@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen items-center justify-center p-8">
-      <div className="grid grid-cols-10 gap-1">
+      <div className="grid grid-cols-10 gap-0">
         {images.map((src, index) => (
           <div 
             key={index} 
@@ -18,9 +18,8 @@ export default function Home() {
             <Image
               src={src}
               alt={`Random image ${index + 1}`}
-              layout="fill"
-              objectFit="cover"
-              className="p-0"
+              width={50}
+              height={50}
             />
           </div>
         ))}
