@@ -3,8 +3,11 @@ import { getRandomImages } from './utils/imageUtils';
 
 export const revalidate = 0;
 
+const IMAGE_DIRECTORY = 'images/eyes';
+const IMAGE_COUNT = 100;
+
 export default function Home() {
-  const images = getRandomImages('images/eyes', 100); // Changed to 75 images for 5x15 grid
+  const images = getRandomImages(IMAGE_DIRECTORY, IMAGE_COUNT);
 
   return (
     <main className="flex min-h-screen items-center justify-center p-4 sm:p-8">
@@ -18,7 +21,7 @@ export default function Home() {
             <Image
               unoptimized
               src={src}
-              alt={`Random image ${index + 1}`}
+              alt={`Random image of eye`}
               fill
               sizes="(max-width: 640px) 20vw, 10vw"
               className="object-cover"
