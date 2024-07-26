@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dreaming (kindness)",
     description: "Une Semaine de Bonté.",
-    url: "https://work.tom.so/dreaming",
+    url: "https://work.tom.so/kindness",
     siteName: "Dreaming (kindness)",
     locale: "en_NZ",
     type: "website",
@@ -41,9 +41,9 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#000000" />
-        <meta property="og:image" content="/dreaming/og.png" />
+        <meta property="og:image" content="/kindness/og.png" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="/dreaming/og.png" />
+        <meta property="twitter:image" content="/kindness/og.png" />
         <meta
           name="description"
           content="Une Semaine de Bonté."
@@ -51,21 +51,21 @@ export default function RootLayout({
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/dreaming/apple-touch-icon.png"
+          href="/kindness/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/dreaming/favicon-32x32.png"
+          href="/kindness/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/dreaming/favicon-16x16.png"
+          href="/kindness/favicon-16x16.png"
         />
-        <link rel="manifest" href="/dreaming/site.webmanifest" />
+        <link rel="manifest" href="/kindness/site.webmanifest" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
